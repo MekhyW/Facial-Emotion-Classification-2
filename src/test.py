@@ -100,7 +100,7 @@ def prediction_thread():
                 for score in range(len(emotion_scores)):
                     emotion_scores_noisy[score] = expit(10 * (emotion_scores_noisy[score] - 0.5))
                     emotion_scores[score] = emotion_scores[score]*0.9 + emotion_scores_noisy[score]*0.1
-                processed_window = processed_window[-15:]
+                processed_window = []
         time.sleep(0.1)
 
 def main(draw=False):
